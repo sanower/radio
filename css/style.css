@@ -10,7 +10,7 @@ img {
     border: 0;
 }
 #page {
-    width: 1120px;
+    width: 950px;
     margin: 0 auto;
 }
 .cl {
@@ -62,16 +62,16 @@ img {
 
 #col3 {
     float: left;
-    width: 460px;
+    width: 340px;
 }
 #col3 .col_title {
-    width: 455px;
+    width: 335px;
     height: 50px;
     padding-left: 5px;
 }
 .title_bg {
     background: url("../images/title_bg.jpg") repeat-x;
-    width: 455px;
+    width: 335px;
     height: 50px;
     color: #333;
     font-size: 22px;
@@ -84,8 +84,48 @@ img {
     float: right;
     padding: 11px 10px 0px 0px;
 }
-#schedule_box {
-    width: 350px;
-    height: 300px;
+#archieve_box, #schedule_box {
+    width: 335px;
+    height: 280px;
+    margin: 5px 0px 5px 5px;
+    float: left;
+    background-color: #372e4b;
+    padding: 10px 0px;
+}
+#schedule_innter {
+    height: 280px;
     overflow: auto;
+    width: 335px;
+    padding: 0px 0px;
+}
+#weekly_schedule_title span {
+    cursor: pointer;
+}
+#weekly_schedule_title span:hover {
+    color: #000;
+}
+#archieve_box_inner, #weekly_schedule, #daily_schedule {
+    padding: 0px 20px;
+    height: 260px;
+    color: #fffcff;
+    font-size: 16px;
+}
+#weekly_schedule{
+    display: none;
+}
+#archieve_box_inner ul, #weekly_schedule ul, #daily_schedule  ul {
+    padding: 0px 0px 10px 0px;
+}
+#archieve_box_inner ul li, #weekly_schedule ul li, #daily_schedule  ul li {
+    line-height: 24px;
+    list-style: none;
+}
+.week_days {
+    padding: 0px 0px 3px 0px;
+    border-bottom: 1px solid #fff;
+    line-height: 26px;
+    margin-bottom: 5px;
+}
+.time {
+    color: #ffff33;
 }
