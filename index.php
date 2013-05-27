@@ -48,63 +48,111 @@
                 <div id="schedule_box">
 		    <div id="schedule_innter">
 			<div id="daily_schedule">
-			    <ul>
-				<li><span class="time">09:30</span> - Talk show 1</li>
-				<li><span class="time">10:30</span> - Talk show 9</li>
-				<li><span class="time">11:30</span> - Talk show 3</li>
-				<li><span class="time">13:30</span> - Talk show 8</li>
-				<li><span class="time">15:30</span> - Talk show 4</li>
-				<li><span class="time">18:30</span> - Talk show 5</li>
-			    </ul>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 1</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 2</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 3</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 4</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 5</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 6</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 7</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 8</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 9</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
 			</div>
 			<div id="weekly_schedule">
-			    <div class="week_days">Saturday</div>
-			    <ul>
-				<li><span class="time">09:30</span> - Talk show 1</li>
-				<li><span class="time">10:30</span> - Talk show 9</li>
-				<li><span class="time">11:30</span> - Talk show 3</li>
-				<li><span class="time">13:30</span> - Talk show 8</li>
-			    </ul>
-			    <div class="week_days">Sunday</div>
-			    <ul>
-				<li><span class="time">09:30</span> - Talk show 1</li>
-				<li><span class="time">10:30</span> - Talk show 9</li>
-				<li><span class="time">11:30</span> - Talk show 3</li>
-				<li><span class="time">13:30</span> - Talk show 8</li>
-			    </ul>
-			    <div class="week_days">Monday</div>
-			    <ul>
-				<li><span class="time">09:30</span> - Talk show 1</li>
-				<li><span class="time">10:30</span> - Talk show 9</li>
-				<li><span class="time">11:30</span> - Talk show 3</li>
-				<li><span class="time">13:30</span> - Talk show 8</li>
-			    </ul>
-			    <div class="week_days">Tuesday</div>
-			    <ul>
-				<li><span class="time">10:30</span> - Talk show 9</li>
-				<li><span class="time">11:30</span> - Talk show 3</li>
-				<li><span class="time">13:30</span> - Talk show 8</li>
-			    </ul>
-			    <div class="week_days">Wednesday</div>
-			    <ul>
-				<li><span class="time">09:30</span> - Talk show 1</li>
-				<li><span class="time">10:30</span> - Talk show 9</li>
-				<li><span class="time">11:30</span> - Talk show 3</li>
-				<li><span class="time">13:30</span> - Talk show 8</li>
-			    </ul>
-			    <div class="week_days">Thursday</div>
-			    <ul>
-				<li><span class="time">09:30</span> - Talk show 1</li>
-				<li><span class="time">10:30</span> - Talk show 9</li>
-				<li><span class="time">11:30</span> - Talk show 3</li>
-				<li><span class="time">13:30</span> - Talk show 8</li>
-			    </ul>
-			    <div class="week_days">Friday</div>
-			    <ul>
-				<li><span class="time">09:30</span> - Talk show 1</li>
-				<li><span class="time">10:30</span> - Talk show 9</li>
-				<li><span class="time">13:30</span> - Talk show 8</li>
-			    </ul>
+			    <div class="week_days">Saturday - 14 June</div>
+			    <div class="schedule_row">
+                                <div class="show_title">Talk show 9</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 8</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+			    <div class="week_days">Sunday - 15 June</div>
+			    <div class="schedule_row">
+                                <div class="show_title">Talk show 9</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 8</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+			    <div class="week_days">Monday - 16 June</div>
+			    <div class="schedule_row">
+                                <div class="show_title">Talk show 9</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 8</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            
+			    <div class="week_days">Tuesday - 17 June</div>
+			    <div class="schedule_row">
+                                <div class="show_title">Talk show 9</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 8</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            
+			    <div class="week_days">Wednesday - 18 June</div>
+			    <div class="schedule_row">
+                                <div class="show_title">Talk show 9</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 8</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            
+			    <div class="week_days">Thursday - 19 June</div>
+			    <div class="schedule_row">
+                                <div class="show_title">Talk show 9</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 8</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            
+			    <div class="week_days">Friday - 20 June</div>
+			    <div class="schedule_row">
+                                <div class="show_title">Talk show 9</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
+                            <div class="schedule_row">
+                                <div class="show_title">Talk show 8</div>
+                                <div class="show_time">9:30-10:30</div>
+                            </div>
 			</div>
 		    </div>
                 </div>
@@ -118,12 +166,33 @@
                 </div>
 		<div id="archieve_box">
 		    <div id="archieve_box_inner">
-			<ul>
-			    <li>Talk show 1</li>
-			    <li>Talk show 9</li>
-			    <li>Talk show 3</li>
-			    <li>Talk show 8</li>
-			</ul>
+			<div class="schedule_row">
+                            <div class="show_title">Talk show 1</div>
+                        </div>
+                        <div class="schedule_row">
+                            <div class="show_title">Talk show 2</div>
+                        </div>
+                        <div class="schedule_row">
+                            <div class="show_title">Talk show 3</div>
+                        </div>
+                        <div class="schedule_row">
+                            <div class="show_title">Talk show 4</div>
+                        </div>
+                        <div class="schedule_row">
+                            <div class="show_title">Talk show 5</div>
+                        </div>
+                        <div class="schedule_row">
+                            <div class="show_title">Talk show 6</div>
+                        </div>
+                        <div class="schedule_row">
+                            <div class="show_title">Talk show 7</div>
+                        </div>
+                        <div class="schedule_row">
+                            <div class="show_title">Talk show 8</div>
+                        </div>
+                        <div class="schedule_row">
+                            <div class="show_title">Talk show 9</div>
+                        </div>
 		    </div>
 		</div>
             </div>
