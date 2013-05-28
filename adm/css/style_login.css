@@ -1,0 +1,129 @@
+*{
+	margin:0;
+	padding:0;
+}
+body {
+	font:12px Verdana, Geneva, sans-serif;
+}
+body a {
+	text-decoration:none;
+	outline:none;
+}
+
+#loginForm {
+	width:300px;
+	height:200px;
+	margin:150px auto 0px auto;
+	background:url(../images/login_bg.jpg) repeat-x;
+}
+#loginFormLeft {
+	width:300px;
+	height:200px;
+	background:url(../images/login_left.jpg) no-repeat left;
+}
+#loginFormRight {
+	width:300px;
+	height:200px;
+	background:url(../images/login_right.jpg) no-repeat right;
+	position:relative;
+}
+#loginHeader {
+	width:300px;
+	font:18px Verdana, Geneva, sans-serif;
+	color:#feffff;
+	text-align:center;
+	padding:30px 0px 10px 0px;
+}
+#loginMessage {
+	position:absolute;
+	top:10px;
+	text-align:center;
+	width:300px;
+}
+#loginCont {
+	width:260px;
+	padding:0px 20px 0px 20px;
+	color:#fffeff;
+}
+#loginCont a {
+	color:#fefffd;
+}
+#loginCont a:hover {
+	color:#000;
+}
+#loginCont td {
+	padding:5px 0px;
+}
+.inputBox {
+	background:url(../images/login_textBox.jpg) no-repeat;
+	height:19px;
+	width:163px;
+	padding:3px 3px 0px 3px;
+}
+.inputBox input {
+	background:none;
+	border:none;
+	width:163px;
+}
+.error {
+	color:#FFF;
+}
+#page {
+	width:800px;
+	margin:0 auto;
+}
+#header {
+	width:800px;
+	height:124px;
+	font:bold 36px Geneva, sans-serif;
+	color:#fefffc;
+	text-align:center;
+	line-height:124px;
+        background-color: #ccc;
+}
+#header a {
+	color:#666;
+}
+#sidebar ul li a:hover, #headerMenu ul li a:hover {
+	color:#ccc;
+}
+#header a:hover{
+    color: #333;
+}
+#headerMenu {
+	width:800px;
+	height:30px;
+	line-height:30px;
+        background-color: #666;
+}
+#congratualtion {
+	float:left;
+	padding-left:10px;
+	color:#fdffff;
+}
+#headerMenu ul {
+	float:right;
+}
+#headerMenu ul li {
+	list-style:none;
+	float:left;
+	padding:0px 10px;
+}
+#headerMenu ul li a {
+	text-decoration:none;
+	color:#fefffc;
+}
+#contentSidebar {
+	width:798px;
+	padding:15px 0px;
+	float:left;
+        border: 1px solid #ccc;
+}
+#content {
+	float:left;
+	width:780px;
+	padding:0px 10px;
+}
+span.required, .message {
+	color:#C00;
+}

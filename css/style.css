@@ -6,6 +6,10 @@ body {
     background-color: #320033;
     font: 14px arial;
 }
+a {
+    text-decoration: none;
+    outline: 0;
+}
 img {
     border: 0;
 }
@@ -127,7 +131,7 @@ img {
     height: 210px;
     overflow: auto;
 }
-#weekly_schedule{
+#daily_schedule{
     display: none;
 }
 #archieve_box_inner ul, #weekly_schedule ul, #daily_schedule  ul {
@@ -136,6 +140,9 @@ img {
 #archieve_box_inner ul li, #weekly_schedule ul li, #daily_schedule  ul li {
     line-height: 24px;
     list-style: none;
+}
+#archieve_box_inner a {
+    color: #fffdff;
 }
 .week_days {
     padding: 0px 0px 3px 0px;

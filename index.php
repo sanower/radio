@@ -1,3 +1,4 @@
+<?php include("adm/config.php"); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,6 +36,10 @@
                 </div>
             </div>
             <div id="col3">
+                <?php 
+                include("adm/class/class.schedule.php"); 
+                $schedule = new Schedule();
+                ?>
                 <div class="col_title">
                     <div class="title_bg">
                         <div id="schedule_title">
@@ -48,111 +53,40 @@
                 <div id="schedule_box">
 		    <div id="schedule_innter">
 			<div id="daily_schedule">
+                            <?php
+                            $sdate = date("m/d/Y");
+                            $result = $schedule->daily_schedule($sdate);
+                            while($row=  mysql_fetch_object($result)):
+                            ?>
                             <div class="schedule_row">
-                                <div class="show_title">Talk show 1</div>
-                                <div class="show_time">9:30-10:30</div>
+                                <div class="show_title"><?php echo $row->title; ?></div>
+                                <div class="show_time"><?php echo $row->stime; ?></div>
                             </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 2</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 3</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 4</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 5</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 6</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 7</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 8</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 9</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
+                            <?php
+                            endwhile;
+                            unset($result);
+                            unset($row);
+                            ?>
 			</div>
 			<div id="weekly_schedule">
-			    <div class="week_days">Saturday - 14 June</div>
-			    <div class="schedule_row">
-                                <div class="show_title">Talk show 9</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 8</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-			    <div class="week_days">Sunday - 15 June</div>
-			    <div class="schedule_row">
-                                <div class="show_title">Talk show 9</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 8</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-			    <div class="week_days">Monday - 16 June</div>
-			    <div class="schedule_row">
-                                <div class="show_title">Talk show 9</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 8</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            
-			    <div class="week_days">Tuesday - 17 June</div>
-			    <div class="schedule_row">
-                                <div class="show_title">Talk show 9</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 8</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            
-			    <div class="week_days">Wednesday - 18 June</div>
-			    <div class="schedule_row">
-                                <div class="show_title">Talk show 9</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 8</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            
-			    <div class="week_days">Thursday - 19 June</div>
-			    <div class="schedule_row">
-                                <div class="show_title">Talk show 9</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 8</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            
-			    <div class="week_days">Friday - 20 June</div>
-			    <div class="schedule_row">
-                                <div class="show_title">Talk show 9</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
-                            <div class="schedule_row">
-                                <div class="show_title">Talk show 8</div>
-                                <div class="show_time">9:30-10:30</div>
-                            </div>
+                            <?php 
+                            $ts = time();
+                            for($i=0;$i<7;$i++):
+                            ?>
+                                <?php 
+                                $ts = $ts+(24*60*60); 
+                                $day = strtolower(date("D",$ts));
+                                $result = $schedule->schedule_by_day($day);
+                                ?>
+                                <div class="week_days"><?php echo date("l - d F",$ts); ?></div>
+                                <?php while($row = mysql_fetch_object($result)): ?>
+                                    <div class="schedule_row">
+                                        <div class="show_title"><?php echo $row->title; ?></div>
+                                        <div class="show_time"><?php echo $row->stime; ?></div>
+                                    </div>
+                                <?php endwhile; ?>
+                            <?php endfor; ?>
+			    
 			</div>
 		    </div>
                 </div>
@@ -166,33 +100,14 @@
                 </div>
 		<div id="archieve_box">
 		    <div id="archieve_box_inner">
+                        <?php
+                        $result = $schedule->archive_show();
+                        while($row=  mysql_fetch_object($result)):
+                        ?>
 			<div class="schedule_row">
-                            <div class="show_title">Talk show 1</div>
+                            <div class="show_title"><a href="archive/<?php echo $row->aname; ?>"><?php echo $row->title; ?></a></div>
                         </div>
-                        <div class="schedule_row">
-                            <div class="show_title">Talk show 2</div>
-                        </div>
-                        <div class="schedule_row">
-                            <div class="show_title">Talk show 3</div>
-                        </div>
-                        <div class="schedule_row">
-                            <div class="show_title">Talk show 4</div>
-                        </div>
-                        <div class="schedule_row">
-                            <div class="show_title">Talk show 5</div>
-                        </div>
-                        <div class="schedule_row">
-                            <div class="show_title">Talk show 6</div>
-                        </div>
-                        <div class="schedule_row">
-                            <div class="show_title">Talk show 7</div>
-                        </div>
-                        <div class="schedule_row">
-                            <div class="show_title">Talk show 8</div>
-                        </div>
-                        <div class="schedule_row">
-                            <div class="show_title">Talk show 9</div>
-                        </div>
+                        <?php endwhile; ?>
 		    </div>
 		</div>
             </div>
