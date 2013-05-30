@@ -80,7 +80,11 @@ img {
     color: #333;
     font-size: 22px;
 }
-#schedule_title {
+#col2 .title_bg {
+    width: 298px;
+    margin: 0px 0px 0px 2px;
+}
+.top_title, #schedule_title {
     float: left;
     padding: 11px 0px 0px 20px;
 }
@@ -92,6 +96,13 @@ img {
 #weekly_schedule_title {
     float: right;
     padding: 11px 10px 0px 0px;
+}
+#weekly_schedule_title span {
+    background-color: #320033;
+    padding: 5px 10px;
+    color: #fffcff;
+    font-size: 14px;
+    border-radius:5px;
 }
 #archieve_box, #schedule_box {
     width: 415px;
@@ -117,7 +128,7 @@ img {
     cursor: pointer;
 }
 #weekly_schedule_title span:hover {
-    color: #000;
+    color: #f00;
 }
 #archieve_box_inner, #weekly_schedule, #daily_schedule {
     padding: 0px 20px;

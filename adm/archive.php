@@ -16,7 +16,13 @@
             }
             if(isset($_POST['submit'])){
                 $archive->title    = $_POST['archive_title'];
-                $archive->archive_save($_FILES['filename']);
+                if($_POST['url']==1){
+                    $archive->archive_save($_FILES['filename']);
+                }
+                else {
+                     $archive->archive_save($_POST['filename1']);
+                }
+                
                 echo $archive->msg;
             }
             ?>
@@ -24,13 +30,21 @@
             <table>
                 <tr>
                     <td>Archive tile:</td>
+                    <td width="20"></td>
                     <td><input type="text" name="archive_title" id="archive_title" /></td>
                 </tr>
                 <tr>
                     <td>Browse file:</td>
+                    <td><input type="radio" name="url" checked="checked" value="1" /></td>
                     <td><input type="file" name="filename" id="filename" /></td>
                 </tr>
                 <tr>
+                    <td>Remote url:</td>
+                    <td><input type="radio" name="url" value="2" /></td>
+                    <td><input type="text" name="filename1" id="filename1" /></td>
+                </tr>
+                <tr>
+                    <td></td>
                     <td></td>
                     <td><input type="submit" id="submit" name="submit" value="Submit" /></td>
                 </tr>
@@ -46,7 +60,7 @@
                  ?>
                  <tr>
                      <td><?php echo $row->title; ?></td>
-                     <td><a href="archive.php?del=<?php echo $row->id; ?>">Delete</a></td>
+                     <td><a href="archive.php?del=<?php echo $row->id; ?>" target="_blank">Delete</a></td>
                  </tr>
                  <?php
                  endwhile;

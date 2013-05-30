@@ -13,12 +13,6 @@ $(document).ready(function(){
                 alert("Please enter title");
                 return false;
             }
-            
-            var file_name = $("#filename").val();
-            if(file_name==''){
-                alert("Please browse file");
-                return false;
-            }
         });
         
 	$("#password").submit(function(){

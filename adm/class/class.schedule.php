@@ -34,8 +34,8 @@ class Schedule{
         }
     }
     
-    public function schedule_by_day($day){
-        $query = "SELECT * FROM schedule WHERE $day=1";
+    public function schedule_by_day($day,$sdate){
+        $query = "SELECT * FROM schedule WHERE $day=1 OR sdate='$sdate'";
         return $result = mysql_query($query);
     }
     
@@ -97,7 +97,12 @@ class Schedule{
      * @param type $file 
      */
     public function archive_save($file){
-        $archive_name = $this->upload_file($file);
+        if(is_array($file)){
+            $archive_name = $this->upload_file($file);
+        }
+        else {
+            $archive_name = $file;
+        }
         if($archive_name){
             $query = "INSERT INTO archive(aname,title) VALUES('$archive_name','$this->title')";
             $result = mysql_query($query);
@@ -145,19 +150,30 @@ class Schedule{
                 $this->msg  = "<p class='msg'>There is a problem.</p>";
             }
         }
+        else {
+            $this->msg  = "<p class='msg'>There is a problem.</p>";
+        }
     }
     
     private function archive_file_del($id){
         $res = mysql_query("SELECT aname FROM archive WHERE id=$id");
         $row = mysql_fetch_object($res);
-        $file_name = "../archive/".$row->aname;
-        if(unlink($file_name)){
-            return true;
+        if(mysql_num_rows($res)>0){
+            $file_name = "../archive/".$row->aname;
+            if(file_exists($file_name)){
+                if(unlink($file_name)){
+                    return true;
+                }
+                else {
+                    $this->msg  = "<p class='msg'>There is a problem.</p>";
+                    return false;
+                }
+            }
+            else {
+                return true;
+            }
         }
-        else {
-            $this->msg  = "<p class='msg'>There is a problem.</p>";
-            return false;
-        }
+            
     }
     
 }

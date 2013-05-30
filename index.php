@@ -16,7 +16,7 @@
                 </div>
                 <div class="col_box">
                     <div id="player">
-
+                        <center><iframe src="http://www.d1same.com/Player/index.php" frameborder="0" marginwidth="0" marginheight="0" autoplay="1" scrolling="no" width="200" height="50"></iframe></center>
                     </div>
                     <div class="ads">
                         <img src="images/add.jpg" alt="Ads" />
@@ -28,7 +28,9 @@
             </div>
             <div id="col2">
                 <div class="col_title">
-                    <img src="images/title_2.jpg" title="Title" />
+                    <div class="title_bg">
+                        <div class="top_title">Radio Station</div>
+                    </div>
                 </div>
                 <div class="col_content">
                     <div id="side_title"><img src="images/side_title.jpg" /></div>
@@ -46,7 +48,7 @@
                             Schedule
                         </div>
                         <div id="weekly_schedule_title">
-                            <span id="daily">Daily</span> / <span id="weekly">Weekly</span>
+                            <span id="daily">Daily</span>  <span id="weekly">Weekly</span>
                         </div>
                     </div>
                 </div>
@@ -75,8 +77,9 @@
                             ?>
                                 <?php 
                                 $ts = $ts+(24*60*60); 
+                                $sdate = date("m/d/Y",$ts);
                                 $day = strtolower(date("D",$ts));
-                                $result = $schedule->schedule_by_day($day);
+                                $result = $schedule->schedule_by_day($day,$sdate);
                                 ?>
                                 <div class="week_days"><?php echo date("l - d F",$ts); ?></div>
                                 <?php while($row = mysql_fetch_object($result)): ?>
@@ -103,9 +106,10 @@
                         <?php
                         $result = $schedule->archive_show();
                         while($row=  mysql_fetch_object($result)):
+                            $http = preg_match("/http/", $row->aname);
                         ?>
 			<div class="schedule_row">
-                            <div class="show_title"><a href="archive/<?php echo $row->aname; ?>"><?php echo $row->title; ?></a></div>
+                            <div class="show_title"><a href="<?php echo ($http==true)?'':'archive/'; ?><?php echo $row->aname; ?>"><?php echo $row->title; ?></a></div>
                         </div>
                         <?php endwhile; ?>
 		    </div>
